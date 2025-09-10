@@ -8,7 +8,7 @@ import { Suspense } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "What's my IP App",
+  title: "What's my IP address",
   description: "Created with v0",
   generator: "v0.app",
 };
