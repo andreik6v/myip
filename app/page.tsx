@@ -72,23 +72,23 @@ export default function IPAddressPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-background">
       <main className="max-w-md mx-auto px-6 py-16">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">IP Address Lookup</h1>
-          <p className="text-slate-600">Discover your public IP address and network information.</p>
+          <h1 className="text-[30px] font-bold text-foreground mb-2 font-sans">IP Address Lookup</h1>
+          <p className="text-muted-foreground font-sans">Discover your public IP address and network information.</p>
         </div>
 
         <div className="mb-8">
-          <h2 className="text-xl font-semibold text-slate-900 mb-4">Your IP Addresses</h2>
+          <h2 className="text-[16px] font-semibold text-foreground mb-4 font-sans">Your IP Addresses</h2>
 
           <div className="space-y-4">
             {loading ? (
-              <Card className="p-6 bg-white border-slate-200">
+              <Card className="p-6 bg-card border-border">
                 <div className="flex items-center justify-center">
                   <div className="flex items-center space-x-3">
-                    <div className="animate-spin rounded-full h-5 w-5 border-2 border-slate-900 border-t-transparent"></div>
-                    <span className="text-slate-600">Detecting your IP address...</span>
+                    <div className="animate-spin rounded-full h-5 w-5 border-2 border-foreground border-t-transparent"></div>
+                    <span className="text-muted-foreground font-sans">Detecting your IP address...</span>
                   </div>
                 </div>
               </Card>
@@ -96,22 +96,22 @@ export default function IPAddressPage() {
               <>
                 {/* IPv4 Address */}
                 {ipData.ipv4 && (
-                  <Card className="p-6 bg-white border-slate-200">
+                  <Card className="p-6 bg-card border-border">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <div className="flex items-center justify-center w-10 h-10 bg-slate-100 rounded-lg">
-                          <Globe className="h-5 w-5 text-slate-700" />
+                        <div className="flex items-center justify-center w-10 h-10 bg-muted rounded-lg">
+                          <Globe className="h-5 w-5 text-muted-foreground" />
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-slate-600 mb-1">IPv4 Address</div>
-                          <div className="text-lg font-mono font-semibold text-slate-900">{ipData.ipv4}</div>
+                          <div className="text-sm font-medium text-muted-foreground mb-1 font-sans">IPv4 Address</div>
+                          <div className="text-lg font-mono font-semibold text-foreground">{ipData.ipv4}</div>
                         </div>
                       </div>
                       <Button
                         variant="outline"
                         size="sm"
                         onClick={() => copyToClipboard(ipData.ipv4!, "IPv4")}
-                        className="border-slate-200 hover:bg-slate-50"
+                        className="border-border hover:bg-accent hover:text-accent-foreground transition-colors"
                       >
                         {copiedIP === ipData.ipv4 ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                       </Button>
@@ -121,36 +121,38 @@ export default function IPAddressPage() {
 
                 {/* IPv6 Address */}
                 {ipData.ipv6 ? (
-                  <Card className="p-6 bg-white border-slate-200">
+                  <Card className="p-6 bg-card border-border">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <div className="flex items-center justify-center w-10 h-10 bg-slate-100 rounded-lg">
-                          <Network className="h-5 w-5 text-slate-700" />
+                        <div className="flex items-center justify-center w-10 h-10 bg-muted rounded-lg">
+                          <Network className="h-5 w-5 text-muted-foreground" />
                         </div>
                         <div className="min-w-0 flex-1">
-                          <div className="text-sm font-medium text-slate-600 mb-1">IPv6 Address</div>
-                          <div className="text-lg font-mono font-semibold text-slate-900 break-all">{ipData.ipv6}</div>
+                          <div className="text-sm font-medium text-muted-foreground mb-1 font-sans">IPv6 Address</div>
+                          <div className="text-lg font-mono font-semibold text-foreground break-all">{ipData.ipv6}</div>
                         </div>
                       </div>
                       <Button
                         variant="outline"
                         size="sm"
                         onClick={() => copyToClipboard(ipData.ipv6!, "IPv6")}
-                        className="ml-4 flex-shrink-0 border-slate-200 hover:bg-slate-50"
+                        className="ml-4 flex-shrink-0 border-border hover:bg-accent hover:text-accent-foreground transition-colors"
                       >
                         {copiedIP === ipData.ipv6 ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                       </Button>
                     </div>
                   </Card>
                 ) : (
-                  <Card className="p-6 bg-slate-50 border-slate-200">
+                  <Card className="p-6 bg-muted border-border">
                     <div className="flex items-center space-x-4">
-                      <div className="flex items-center justify-center w-10 h-10 bg-slate-200 rounded-lg">
-                        <Network className="h-5 w-5 text-slate-500" />
+                      <div className="flex items-center justify-center w-10 h-10 bg-background rounded-lg">
+                        <Network className="h-5 w-5 text-muted-foreground" />
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-slate-600 mb-1">IPv6 Address</div>
-                        <div className="text-slate-500">Not available from your current connection</div>
+                        <div className="text-sm font-medium text-muted-foreground mb-1 font-sans">IPv6 Address</div>
+                        <div className="text-muted-foreground font-sans">
+                          Not available from your current connection
+                        </div>
                       </div>
                     </div>
                   </Card>
@@ -164,11 +166,11 @@ export default function IPAddressPage() {
           <Button
             onClick={fetchIPAddresses}
             disabled={loading}
-            className="w-full bg-slate-900 hover:bg-slate-800 text-white"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-sans"
           >
             {loading ? (
               <>
-                <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent mr-2"></div>
+                <div className="animate-spin rounded-full h-4 w-4 border-2 border-primary-foreground border-t-transparent mr-2"></div>
                 Refreshing...
               </>
             ) : (
@@ -181,7 +183,7 @@ export default function IPAddressPage() {
         </div>
 
         <div className="text-center">
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-muted-foreground font-sans">
             <strong>Privacy Note:</strong> Your IP address may change depending on your network connection and location.
             IP addresses are detected locally and not stored or transmitted.
           </p>
