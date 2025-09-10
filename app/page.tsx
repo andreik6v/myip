@@ -114,7 +114,7 @@ export default function IPAddressPage() {
                         <Globe className="h-6 w-6 text-slate-600" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-slate-500 uppercase tracking-wide">IPv4 Address</h3>
+                        <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wide">IPv4 Address</h2>
                         <p className="text-2xl font-mono font-semibold text-slate-900 mt-1">{ipData.ipv4}</p>
                       </div>
                     </div>
@@ -143,7 +143,7 @@ export default function IPAddressPage() {
                         <Network className="h-6 w-6 text-slate-600" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-slate-500 uppercase tracking-wide">IPv6 Address</h3>
+                        <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wide">IPv6 Address</h2>
                         <p className="text-xl font-mono font-semibold text-slate-900 mt-1 break-all">{ipData.ipv6}</p>
                       </div>
                     </div>
@@ -168,7 +168,7 @@ export default function IPAddressPage() {
                       <Network className="h-6 w-6 text-slate-400" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-medium text-slate-500 uppercase tracking-wide">IPv6 Address</h3>
+                      <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wide">IPv6 Address</h2>
                       <p className="text-slate-400 mt-1">Not available from your current connection</p>
                     </div>
                   </div>
